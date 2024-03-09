@@ -55,3 +55,32 @@ form.addEventListener("submit", (e) => {
         search.value = "";
     }
 });
+
+const slider = document.querySelector('.video-list');
+const rightScroll = document.getElementById('rightScroll');
+const leftScroll = document.getElementById('leftScroll');
+const videoElements = document.querySelectorAll('.video-list video');
+let flag = true
+
+const videoArray = Array.from(videoElements);
+console.log(videoArray)
+
+let activeVideo = 0
+
+rightScroll.addEventListener('click', () => {
+    slider.style.scrollBehavior = 'smooth'
+    slider.scrollLeft += 840;
+})
+
+leftScroll.addEventListener('click', () => {
+    slider.style.scrollBehavior = 'smooth'
+    slider.scrollLeft -= 840;
+})
+
+const sliderWidth = slider.scrollWidth - slider.clientWidth;
+
+slider.addEventListener('scroll', () => {
+    if (slider.scrollLeft === sliderWidth) {
+        slider.scrollLeft = 0;
+    }
+});

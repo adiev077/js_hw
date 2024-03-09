@@ -141,11 +141,58 @@ main {
     margin-top: 50px;
 }
 
+#leftScroll  {
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    left: 20;
+    z-index: 999;
+}
+
+#rightScroll {
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    right: 20;
+}
+
 .slider-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.video-list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    justify-content: center; /* Центрирование первого элемента */
+}
+
+.video-list > video {
+    flex: 0 0 auto; /* Новое */
+}
+
+.video-list > video:nth-child(1) {
+    margin-right: auto; /* Первый элемент справа отступается, чтобы центрироваться */
+}
+
+.video-list > video:nth-child(2),
+.video-list > video:nth-child(3) {
+    margin-left: auto; /* Второй и третий элементы слева отступаются */
+}
+
+video {
+    width: 822px; 
+    height: 450px;
+    border-radius: 12px;
+    border: 1px solid white;
 }
 
 .filter {
