@@ -5,8 +5,8 @@ const API_URL_SEARCH =
     "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=";
 
 getMovies(API_URL_POPULAR, "moviesContainer1");
-getMovies(API_URL_POPULAR, "moviesContainer2");
-// Добавьте вызов getMovies для других блоков при необходимости
+getMovies(API_URL_POPULAR + "2","moviesContainer2", 6);
+getMovies(API_URL_POPULAR + "5","moviesContainer3", 6);
 
 async function getMovies(url, containerId) {
     const resp = await fetch(url, {
@@ -50,7 +50,7 @@ form.addEventListener("submit", (e) => {
 
     const apiSearchUrl = `${API_URL_SEARCH}${search.value}`;
     if (search.value) {
-        getMovies(apiSearchUrl);
+        getMovies(apiSearchUrl, "searchResults");
 
         search.value = "";
     }
