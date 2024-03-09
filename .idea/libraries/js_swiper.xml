@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="js-swiper" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="&lt;Custom&gt;" />
+    </properties>
+    <CLASSES />
+    <DOCUMENTATION>
+      <root url="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
+    </DOCUMENTATION>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
