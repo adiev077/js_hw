@@ -60,7 +60,7 @@ const slider = document.querySelector('.video-list');
 const rightScroll = document.getElementById('rightScroll');
 const leftScroll = document.getElementById('leftScroll');
 const videoElements = document.querySelectorAll('.video-list video');
-let flag = true
+let flag = true 
 
 const videoArray = Array.from(videoElements);
 console.log(videoArray)
