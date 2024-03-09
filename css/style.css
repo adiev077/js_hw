@@ -316,8 +316,97 @@ main {
     transition: 1s;
 }
 
-.oscar {
-    padding-top: 200px;
+.top__ {
+    padding-top: 150px;
+}
+
+.top_ten {
+    padding-top: 60px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 1440px;
+    gap: 80px;
+}
+
+.img_2 {
+    border-radius: 7px;
+}
+
+.img_1 {
+    margin-left: -50px;
+}
+
+.top1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top6 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top7 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top8 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top9 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top10 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reclam_block {
+    width: 1440px;
+    height: 655px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
 }
 
 #moviesContainer2 {
