@@ -23,40 +23,59 @@ async function getMovies(url, containerId) {
 
 function showMovies(data, containerId) {
     const moviesEl = document.getElementById(containerId);
+    moviesEl.innerHTML = ''; // Очищаем контейнер перед добавлением новых фильмов
 
     data.films.forEach((movie) => {
         const movieEl = document.createElement("div");
         movieEl.classList.add("movie");
         movieEl.innerHTML = `
-            <div class="movie__cover-inner">
-                <img
-                    src="${movie.posterUrlPreview}"
-                    class="movie__cover"
-                    alt="${movie.nameRu}"
-                />
-                <div class="movie__cover--darkened"></div>
-            </div>
-            </div>
-        `;
-        movieEl.addEventListener("click", () => openModal(movie.filmId))
+                    <div class="movie__cover-inner">
+                        <img
+                            src="${movie.posterUrlPreview}"
+                            class="movie__cover"
+                            alt="${movie.nameRu}"
+                        />
+                        <div class="movie__cover--darkened"></div>
+                    </div>
+                `;
+        movieEl.addEventListener("click", () => openModal(movie.filmId));
         moviesEl.appendChild(movieEl);
     });
 }
 
-
-const form = document.querySelector("form");
-const search = document.querySelector(".search");
-
-form.addEventListener("submit", (e) => {
+document.getElementById('searchForm').addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const apiSearchUrl = `${API_URL_SEARCH}${search.value}`;
-    if (search.value) {
-        getMovies(apiSearchUrl, "searchResults");
-
-        search.value = "";
+    const searchInput = document.getElementById('search').value.trim();
+    if (searchInput !== '') {
+        const searchUrl = `${API_URL_SEARCH}${encodeURIComponent(searchInput)}`;
+        getMovies(searchUrl, 'moviesContainer-search');
     }
 });
+
+// Показываем популярные фильмы при загрузке страницы
+getMovies(API_URL_POPULAR, 'moviesContainer-search');
+
+
+
+
+
+// SEARCH MENU -------------------------------------------------------------
+
+document.getElementById('search').addEventListener('click', () => {
+    document.getElementById('searchMenu').style.display = 'block';
+    document.body.classList.add('menu-open');
+});
+
+document.addEventListener('click', function(e) {
+    const hamburgerMenu = document.getElementById('searchMenu');
+    const searchForm = document.getElementById('searchForm');
+
+    if (!searchForm.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        hamburgerMenu.style.display = 'none';
+        document.body.classList.remove('menu-open');
+    }
+});
+
 
 // SLIDER----------------------------------------------
 
