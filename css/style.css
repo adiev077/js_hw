@@ -243,6 +243,35 @@ video {
     padding-bottom: 10px;
 }
 
+.market__2 {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding-bottom: 10px;
+    height: 487px;
+    width: 1440px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    gap: 20px;
+    background-image: url("/img/market_block/backgraund_2.jpg");
+}
+
+.market__2 a {
+    text-decoration: none;
+}
+
+.market__2 a img {
+    border-radius: 12px;
+    transition: 1s;
+}
+
+.market__2 a img:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
 
 .filter button:hover {
     transform: scale(1.1);
@@ -279,15 +308,6 @@ video {
     scrollbar-width: none;
     scroll-behavior: smooth;
     width: 1440px;
-}
-
-.popular__film_trailer {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 72px;
-    width: 1296px;
-    height: 490px;
-    border-radius: 15px;
 }
 
 .genre__block {
@@ -525,4 +545,56 @@ video {
 .tv_block a img:hover {
     transform: scale(1.1);
     transition: 1s;
+}
+
+.market__ {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding-bottom: 10px;
+    height: 487px;
+    width: 1440px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    gap: 20px;
+    background-image: url("/img/market_block/backgraund.jpg");
+}
+
+.market__ a {
+    text-decoration: none;
+}
+
+.market__ a img {
+    border-radius: 12px;
+    transition: 1s;
+}
+
+.market__ a img:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#moviesContainer4 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 1440px;
+}
+
+#moviesContainer5 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 1440px;
 }

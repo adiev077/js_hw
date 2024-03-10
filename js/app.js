@@ -7,6 +7,8 @@ const API_URL_SEARCH =
 getMovies(API_URL_POPULAR, "moviesContainer1");
 getMovies(API_URL_POPULAR + "2","moviesContainer2", 6);
 getMovies(API_URL_POPULAR + "5","moviesContainer3", 6);
+getMovies(API_URL_POPULAR + "8","moviesContainer4", 2);
+getMovies(API_URL_POPULAR + "3","moviesContainer5", 9);
 
 async function getMovies(url, containerId) {
     const resp = await fetch(url, {
