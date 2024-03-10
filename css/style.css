@@ -224,28 +224,50 @@ main {
     overflow-x: scroll;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    justify-content: center; /* Центрирование первого элемента */
+    justify-content: center;
 }
 
-.video-list > video {
+.video-list > .video-container {
     flex: 0 0 auto; /* Новое */
 }
 
-.video-list > video:nth-child(1) {
-    margin-right: auto; /* Первый элемент справа отступается, чтобы центрироваться */
+.video-list > .video-container:nth-child(1) {
+    margin-right: auto;
 }
 
-.video-list > video:nth-child(2),
-.video-list > video:nth-child(3) {
-    margin-left: auto; /* Второй и третий элементы слева отступаются */
+.video-list > .video-container:nth-child(2),
+.video-list > .video-container:nth-child(3) {
+    margin-left: auto;
 }
 
-
-video {
-    width: 822px;
+.video-container {
+    position: relative;
+    width: 800px;
     height: 450px;
+}
+
+.video-placeholder,
+.video-player {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    z-index: 888;
+}
+
+.video-container:hover .video-player,
+.video-container:focus .video-player {
+    opacity: 1;
     border-radius: 12px;
-    border: 1px solid white;
 }
 
 .filter {
@@ -635,5 +657,11 @@ video {
     scrollbar-width: none;
     scroll-behavior: smooth;
     width: 1440px;
+}
+
+/* MAIN STYLE--------------------------------------------------------- END */
+
+footer {
+    margin-top: 120px;
 }
 

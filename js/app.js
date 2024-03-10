@@ -82,7 +82,7 @@ document.addEventListener('click', function(e) {
 const slider = document.querySelector('.video-list');
 const rightScroll = document.getElementById('rightScroll');
 const leftScroll = document.getElementById('leftScroll');
-const videoElements = document.querySelectorAll('.video-list video');
+const videoElements = document.querySelectorAll('.video-container');
 let flag = true
 
 const videoArray = Array.from(videoElements);
@@ -94,7 +94,7 @@ rightScroll.addEventListener('click', () => {
     activeVideo++;
     if (activeVideo >= videoArray.length) activeVideo = 0;
 
-    const removedVideo = document.querySelector('.video-list video');
+    const removedVideo = document.querySelector('.video-container');
     removedVideo.remove();
 
     const newVideo = videoArray[activeVideo].cloneNode(true);
@@ -107,10 +107,32 @@ leftScroll.addEventListener('click', () => {
     activeVideo--;
     if (activeVideo < 0) activeVideo = videoArray.length - 1;
 
-    const removedVideo = document.querySelector('.video-list video');
+    const removedVideo = document.querySelector('.video-container');
     removedVideo.remove();
 
     const newVideo = videoArray[activeVideo].cloneNode(true);
     slider.appendChild(newVideo);
     // slider.scrollLeft -= 900;
 })
+
+// VIDEO PLAY----------------------------------------------------------
+
+const video = document.getElementById("myVideo");
+const placeholderImage = document.getElementById("placeholderImage");
+
+function playVideo() {
+    if (video.paused) {
+        video.play();
+        placeholderImage.style.visibility = "hidden"; // Сделать изображение невидимым
+    }
+}
+
+function pauseVideo() {
+    if (!video.paused) {
+        video.pause();
+        placeholderImage.style.visibility = "visible"; // Восстановить видимость изображения
+    }
+}
+
+
+
