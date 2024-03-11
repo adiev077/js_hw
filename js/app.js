@@ -9,6 +9,7 @@ getMovies(API_URL_POPULAR + "2","moviesContainer2", 6);
 getMovies(API_URL_POPULAR + "5","moviesContainer3", 6);
 getMovies(API_URL_POPULAR + "8","moviesContainer4", 2);
 getMovies(API_URL_POPULAR + "3","moviesContainer5", 9);
+getMovies(API_URL_POPULAR + "6","moviesContainer6", 4);
 
 async function getMovies(url, containerId) {
     const resp = await fetch(url, {
@@ -99,21 +100,23 @@ rightScroll.addEventListener('click', () => {
 
     const newVideo = videoArray[activeVideo].cloneNode(true);
     slider.append(newVideo);
-
-    // slider.scrollLeft += 900;
 })
 
 leftScroll.addEventListener('click', () => {
     activeVideo--;
     if (activeVideo < 0) activeVideo = videoArray.length - 1;
+    slider.innerHTML = '';
 
-    const removedVideo = document.querySelector('.video-container');
-    removedVideo.remove();
-
-    const newVideo = videoArray[activeVideo].cloneNode(true);
-    slider.appendChild(newVideo);
-    // slider.scrollLeft -= 900;
+    for (let i = activeVideo; i < videoArray.length; i++) {
+        const newVideo = videoArray[i].cloneNode(true);
+        slider.appendChild(newVideo);
+    }
+    for (let i = 0; i < activeVideo; i++) {
+        const newVideo = videoArray[i].cloneNode(true);
+        slider.appendChild(newVideo);
+    }
 })
+
 
 // VIDEO PLAY----------------------------------------------------------
 
